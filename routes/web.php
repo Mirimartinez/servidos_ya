@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/login', function(){
     return view('login');
 });
+
+Route::resource('producto', \App\Http\Controllers\ProductoController::class);
+

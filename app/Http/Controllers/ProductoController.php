@@ -14,7 +14,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $datos['productos']=Producto::paginate(5);
+        return view('producto.index', $datos);
     }
 
     /**
@@ -24,7 +25,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        return view('producto.create');
     }
 
     /**
@@ -35,7 +36,9 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datosProducto = request()->except('_token');
+        Producto::insert($datosProducto);
+        return response()->json($datosProducto);
     }
 
     /**
@@ -55,9 +58,10 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
-        //
+        $producto=Producto::findOrFail($id);
+        return view('producto.edit', compact('producto'));
     }
 
     /**
@@ -67,9 +71,12 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, $id)
     {
-        //
+        $datosProducto = request()->except('_token','_method');
+        Producto::where('id','=',$id)->update($datosProducto);
+        $producto=Producto::findOrFail($id);
+        return view('producto.edit', compact('producto'));
     }
 
     /**
@@ -78,8 +85,9 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy($id)
     {
-        //
+        Producto::destroy($id);
+        return redirect('producto');
     }
 }
