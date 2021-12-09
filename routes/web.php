@@ -22,4 +22,5 @@ Route::get('/login', function(){
 });
 
 Route::resource('producto', \App\Http\Controllers\ProductoController::class);
+Route::resource('caja',\App\Http\Controllers\CajaController::class);
 
