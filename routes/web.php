@@ -22,4 +22,11 @@ Route::get('/login', function(){
 });
 
 Route::resource('producto', \App\Http\Controllers\ProductoController::class);
-
+Route::resource('caja',\App\Http\Controllers\CajaController::class);
+Route::resource('permiso',\App\Http\Controllers\PermisoController::class);
+Route::resource('rol', \App\Http\Controllers\RolController::class);
+Route::resource('usuario',\App\Http\Controllers\UsuarioController::class);
+Route::resource('comanda', \App\Http\Controllers\ComandaController::class);
+Route::resource('itemcomanda',\App\Http\Controllers\ItemcomandaController::class);
+Route::resource('comentario',\App\Http\Controllers\ComentarioController::class);
+Route::resource('mesa',\App\Http\Controllers\MesaController::class);
