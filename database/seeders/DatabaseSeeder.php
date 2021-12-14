@@ -18,7 +18,12 @@ class DatabaseSeeder extends Seeder
             ProductoSeeder::class,
             CajaSeeder::class,
             PermisoSeeder::class,
-            RolSeeder::class
+            RolSeeder::class,
+            UsuarioSeeder::class,
+            ComandaSeeder::class,
+            ItemcomandaSeeder::class,
+            ComentarioSeeder::class,
+            MesaSeeder::class
         ]);
 
     }

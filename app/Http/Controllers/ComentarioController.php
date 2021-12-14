@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rol;
+use App\Models\Comentario;
 use Illuminate\Http\Request;
 
-class RolController extends Controller
+class ComentarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class RolController extends Controller
     public function index()
     {
         //
-        $datos['rols']=Rol::paginate(5);
-        return view('rol.index', $datos);
+        $datos['comentarios']=Comentario::paginate(5);
+        return view('comentario.index', $datos);
     }
 
     /**
@@ -27,7 +27,7 @@ class RolController extends Controller
     public function create()
     {
         //
-        return view('rol.create');
+        return view('comentario.create');
     }
 
     /**
@@ -39,18 +39,18 @@ class RolController extends Controller
     public function store(Request $request)
     {
         //
-        $datosRol = request()->except('_token');
-        Rol::insert($datosRol);
-        return response()->json($datosRol);
+        $datosComentario = request()->except('_token');
+        Comentario::insert($datosComentario);
+        return response()->json($datosComentario);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Comentario  $comentario
      * @return \Illuminate\Http\Response
      */
-    public function show(Rol $rol)
+    public function show(Comentario $comentario)
     {
         //
     }
@@ -58,42 +58,42 @@ class RolController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Comentario  $comentario
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $rol=Rol::findOrFail($id);
-        return view('rol.edit', compact('rol'));
+        $comentario=Comentario::findOrFail($id);
+        return view('comentario.edit', compact('comentario'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Comentario  $comentario
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
-        $datosRol = request()->except('_token','_method');
-        Rol::where('id','=',$id)->update($datosRol);
-        $rol=Rol::findOrFail($id);
-        return view('rol.edit', compact('rol'));
+        $datosComentario = request()->except('_token','_method');
+        Comentario::where('id','=',$id)->update($datosComentario);
+        $comentario=Comentario::findOrFail($id);
+        return view('comentario.edit', compact('comentario'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Comentario  $comentario
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        Rol::destroy($id);
-        return redirect('rol');
+        Comentario::destroy($id);
+        return redirect('comentario');
     }
 }

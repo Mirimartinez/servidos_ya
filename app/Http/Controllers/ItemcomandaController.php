@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rol;
+use App\Models\Itemcomanda;
 use Illuminate\Http\Request;
 
-class RolController extends Controller
+class ItemcomandaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class RolController extends Controller
     public function index()
     {
         //
-        $datos['rols']=Rol::paginate(5);
-        return view('rol.index', $datos);
+        $datos['itemcomandas']=Itemcomanda::paginate(5);
+        return view('itemcomanda.index', $datos);
     }
 
     /**
@@ -27,7 +27,7 @@ class RolController extends Controller
     public function create()
     {
         //
-        return view('rol.create');
+        return view('itemcomanda.create');
     }
 
     /**
@@ -39,18 +39,18 @@ class RolController extends Controller
     public function store(Request $request)
     {
         //
-        $datosRol = request()->except('_token');
-        Rol::insert($datosRol);
-        return response()->json($datosRol);
+        $datosItemComanda = request()->except('_token');
+        Itemcomanda::insert($datosItemComanda);
+        return response()->json($datosItemComanda);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Itemcomanda  $itemcomanda
      * @return \Illuminate\Http\Response
      */
-    public function show(Rol $rol)
+    public function show(Itemcomanda $itemcomanda)
     {
         //
     }
@@ -58,42 +58,42 @@ class RolController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Itemcomanda  $itemcomanda
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $rol=Rol::findOrFail($id);
-        return view('rol.edit', compact('rol'));
+        $itemcomanda=Itemcomanda::findOrFail($id);
+        return view('itemcomanda.edit', compact('itemcomanda'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Itemcomanda  $itemcomanda
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
-        $datosRol = request()->except('_token','_method');
-        Rol::where('id','=',$id)->update($datosRol);
-        $rol=Rol::findOrFail($id);
-        return view('rol.edit', compact('rol'));
+        $datosItemComanda = request()->except('_token','_method');
+        Itemcomanda::where('id','=',$id)->update($datosItemComanda);
+        $itemcomanda=Itemcomanda::findOrFail($id);
+        return view('itemcomanda.edit', compact('itemcomanda'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Itemcomanda  $itemcomanda
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id )
     {
         //
-        Rol::destroy($id);
-        return redirect('rol');
+        Itemcomanda::destroy($id);
+        return redirect('itemcomanda');
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rol;
+use App\Models\Mesa;
 use Illuminate\Http\Request;
 
-class RolController extends Controller
+class MesaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class RolController extends Controller
     public function index()
     {
         //
-        $datos['rols']=Rol::paginate(5);
-        return view('rol.index', $datos);
+        $datos['mesas']=Mesa::paginate(5);
+        return view('mesa.index', $datos);
     }
 
     /**
@@ -27,7 +27,7 @@ class RolController extends Controller
     public function create()
     {
         //
-        return view('rol.create');
+        return view('mesa.create');
     }
 
     /**
@@ -39,18 +39,18 @@ class RolController extends Controller
     public function store(Request $request)
     {
         //
-        $datosRol = request()->except('_token');
-        Rol::insert($datosRol);
-        return response()->json($datosRol);
+        $datosMesa = request()->except('_token');
+        Mesa::insert($datosMesa);
+        return response()->json($datosMesa);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Mesa  $mesa
      * @return \Illuminate\Http\Response
      */
-    public function show(Rol $rol)
+    public function show(Mesa $mesa)
     {
         //
     }
@@ -58,42 +58,42 @@ class RolController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Mesa  $mesa
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $rol=Rol::findOrFail($id);
-        return view('rol.edit', compact('rol'));
+        $mesa=Mesa::findOrFail($id);
+        return view('mesa.edit', compact('mesa'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Mesa  $mesa
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
-        $datosRol = request()->except('_token','_method');
-        Rol::where('id','=',$id)->update($datosRol);
-        $rol=Rol::findOrFail($id);
-        return view('rol.edit', compact('rol'));
+        $datosMesa = request()->except('_token','_method');
+        Mesa::where('id','=',$id)->update($datosMesa);
+        $mesa=Mesa::findOrFail($id);
+        return view('mesa.edit', compact('mesa'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Mesa  $mesa
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        Rol::destroy($id);
-        return redirect('rol');
+        Mesa::destroy($id);
+        return redirect('mesa');
     }
 }

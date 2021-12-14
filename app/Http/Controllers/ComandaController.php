@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rol;
+use App\Models\Comanda;
 use Illuminate\Http\Request;
 
-class RolController extends Controller
+class ComandaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class RolController extends Controller
     public function index()
     {
         //
-        $datos['rols']=Rol::paginate(5);
-        return view('rol.index', $datos);
+        $datos['comandas']=Comanda::paginate(5);
+        return view('comanda.index', $datos);
     }
 
     /**
@@ -27,7 +27,7 @@ class RolController extends Controller
     public function create()
     {
         //
-        return view('rol.create');
+        return view('comanda.create');
     }
 
     /**
@@ -39,18 +39,18 @@ class RolController extends Controller
     public function store(Request $request)
     {
         //
-        $datosRol = request()->except('_token');
-        Rol::insert($datosRol);
-        return response()->json($datosRol);
+        $datosComanda = request()->except('_token');
+        Comanda::insert($datosComanda);
+        return response()->json($datosComanda);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Comanda  $comanda
      * @return \Illuminate\Http\Response
      */
-    public function show(Rol $rol)
+    public function show(Comanda $comanda)
     {
         //
     }
@@ -58,42 +58,42 @@ class RolController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Comanda  $comanda
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $rol=Rol::findOrFail($id);
-        return view('rol.edit', compact('rol'));
+        $comanda=Comanda::findOrFail($id);
+        return view('comanda.edit', compact('comanda'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Comanda  $comanda
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
-        $datosRol = request()->except('_token','_method');
-        Rol::where('id','=',$id)->update($datosRol);
-        $rol=Rol::findOrFail($id);
-        return view('rol.edit', compact('rol'));
+        $datosComanda = request()->except('_token','_method');
+        Comanda::where('id','=',$id)->update($datosComanda);
+        $comanda=Comanda::findOrFail($id);
+        return view('comanda.edit', compact('comanda'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Rol  $rol
+     * @param  \App\Models\Comanda  $comanda
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        Rol::destroy($id);
-        return redirect('rol');
+        Comanda::destroy($id);
+        return redirect('comanda');
     }
 }
