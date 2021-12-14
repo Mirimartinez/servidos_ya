@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Producto;
+use App\Models\Permiso;
 use Illuminate\Http\Request;
 
-class ProductoController extends Controller
+class PermisoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class ProductoController extends Controller
     //1
     public function index()
     {
-        $datos['productos']=Producto::paginate(5);
-        return view('producto.index', $datos);
+        //
+        $datos['permisos']=Permiso::paginate(5);
+        return view('permiso.index', $datos);
     }
 
     /**
@@ -27,7 +28,8 @@ class ProductoController extends Controller
     //2
     public function create()
     {
-        return view('producto.create');
+        //
+        return view('permiso.create');
     }
 
     /**
@@ -39,19 +41,20 @@ class ProductoController extends Controller
     //3
     public function store(Request $request)
     {
+        //
         $datosProducto = request()->except('_token');
-        Producto::insert($datosProducto);
+        Permiso::insert($datosProducto);
         return response()->json($datosProducto);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Permiso  $permiso
      * @return \Illuminate\Http\Response
      */
     //4
-    public function show(Producto $producto)
+    public function show(Permiso $permiso)
     {
         //
     }
@@ -59,42 +62,45 @@ class ProductoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Permiso  $permiso
      * @return \Illuminate\Http\Response
      */
     //5
     public function edit($id)
     {
-        $producto=Producto::findOrFail($id);
-        return view('producto.edit', compact('producto'));
+        //
+        $permiso=Permiso::findOrFail($id);
+        return view('permiso.edit', compact('permiso'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Permiso  $permiso
      * @return \Illuminate\Http\Response
      */
     //6
     public function update(Request $request, $id)
     {
-        $datosProducto = request()->except('_token','_method');
-        Producto::where('id','=',$id)->update($datosProducto);
-        $producto=Producto::findOrFail($id);
-        return view('producto.edit', compact('producto'));
+        //
+        $datosPermiso = request()->except('_token','_method');
+        Permiso::where('id','=',$id)->update($datosPermiso);
+        $permiso=Permiso::findOrFail($id);
+        return view('permiso.edit', compact('permiso'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Permiso  $permiso
      * @return \Illuminate\Http\Response
      */
     //7
     public function destroy($id)
     {
-        Producto::destroy($id);
-        return redirect('producto');
+        //
+        Permiso::destroy($id);
+        return redirect('permiso');
     }
 }

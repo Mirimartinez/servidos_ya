@@ -23,4 +23,5 @@ Route::get('/login', function(){
 
 Route::resource('producto', \App\Http\Controllers\ProductoController::class);
 Route::resource('caja',\App\Http\Controllers\CajaController::class);
-
+Route::resource('permiso',\App\Http\Controllers\PermisoController::class);
+Route::resource('rol', \App\Http\Controllers\RolController::class);
