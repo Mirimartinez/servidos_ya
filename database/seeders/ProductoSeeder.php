@@ -18,7 +18,7 @@ class ProductoSeeder extends Seeder
         DB::table('productos')->insert([
             'nombre' => 'Cafe Espresso Doble',
             'descripcion' => 'Cafe Espresso Doble 60ml',
-            'tipo' => 'Cafeteria',
+            'idcategoria' => 1,
             'precio' => 170
         ]);
     }

@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Producto;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 
-class ProductoController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    //1
     public function index()
     {
-        $datos['productos']=Producto::paginate(5);
-        return view('producto.index', $datos);
+        $datos['categorias']=Categoria::paginate(5);
+        return view('categoria.index', $datos);
     }
 
     /**
@@ -25,10 +23,9 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //2
     public function create()
     {
-        return view('producto.create');
+        return view('categoria.create');
     }
 
     /**
@@ -37,22 +34,20 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    //3
     public function store(Request $request)
     {
-        $datosProducto = request()->except('_token');
-        Producto::insert($datosProducto);
-        return response()->json($datosProducto);
+        $datosCategoria = request()->except('_token');
+        Categoria::insert($datosCategoria);
+        return response()->json($datosCategoria);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    //4
-    public function show(Producto $producto)
+    public function show(Categoria $categoria)
     {
         //
     }
@@ -60,42 +55,39 @@ class ProductoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    //5
     public function edit($id)
     {
-        $producto=Producto::findOrFail($id);
-        return view('producto.edit', compact('producto'));
+        $categoria=Categoria::findOrFail($id);
+        return view('categoria.edit', compact('categoria'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    //6
     public function update(Request $request, $id)
     {
-        $datosProducto = request()->except('_token','_method');
-        Producto::where('id','=',$id)->update($datosProducto);
-        $producto=Producto::findOrFail($id);
-        return view('producto.edit', compact('producto'));
+        $datosCategoria = request()->except('_token','_method');
+        Categoria::where('id','=',$id)->update($datosCategoria);
+        $categoria=Categoria::findOrFail($id);
+        return view('categoria.edit', compact('categoria'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    //7
     public function destroy($id)
     {
-        Producto::destroy($id);
-        return redirect('producto');
+        Categoria::destroy($id);
+        return redirect('categoria');
     }
 }
