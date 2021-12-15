@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             ComandaSeeder::class,
             ItemcomandaSeeder::class,
             ComentarioSeeder::class,
-            MesaSeeder::class
+            MesaSeeder::class,
+            CategoriaSeeder::class
         ]);
 
     }
