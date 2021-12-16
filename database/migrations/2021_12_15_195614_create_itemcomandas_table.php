@@ -15,9 +15,14 @@ class CreateItemcomandasTable extends Migration
     {
         Schema::create('itemcomandas', function (Blueprint $table) {
             $table->id();
-
-            $table->integer('idcomanda');
-            $table->integer('idproducto');
+            $table->foreignId('idcomanda')
+                ->constrained('comandas')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('idproducto')
+                ->constrained('productos')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->float('precio','8','2');
 
 

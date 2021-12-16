@@ -16,8 +16,8 @@ class ItemcomandaSeeder extends Seeder
     {
         //
         DB::table('itemcomandas')->insert([
-            'idcomanda'=>2,
-            'idproducto'=>3,
+            'idcomanda'=>1,
+            'idproducto'=>1,
             'precio'=>1235.30
 
         ]);

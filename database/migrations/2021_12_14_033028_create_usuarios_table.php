@@ -17,7 +17,10 @@ class CreateUsuariosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('password');
-            $table->integer('idrol');
+            $table->foreignId('idrol')
+                ->constrained('rols')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->boolean('activo');
             $table->timestamps();
         });
