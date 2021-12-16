@@ -19,8 +19,14 @@ class CreateComandasTable extends Migration
             $table->date('fecha');
             $table->time('horainicio');
             $table->time('horafin');
-            $table->integer('idmesa');
-            $table->integer('idusuario');
+            $table->foreignId('idmesa')
+                ->constrained('mesas')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('idusuario')
+                ->constrained('usuarios')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->float('importetotal','8','2');
             $table->boolean('pagado');
 

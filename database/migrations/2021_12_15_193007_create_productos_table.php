@@ -17,7 +17,10 @@ class CreateProductosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('descripcion');
-            $table->integer('idcategoria');
+            $table->foreignId('idcategoria')
+                ->constrained('categorias')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->float('precio',8,2);
             $table->timestamps();
         });
