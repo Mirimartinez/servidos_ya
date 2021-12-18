@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Permiso extends Model
 {
-//    use HasFactory;
-    protected $table='permisos';
+    use HasFactory;
+    public function rol(){
+        return $this->belongsTo('App/Models/Rol');
+    }
+
 }
