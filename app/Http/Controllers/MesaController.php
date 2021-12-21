@@ -15,7 +15,7 @@ class MesaController extends Controller
     public function index()
     {
         //
-        $datos['mesas']=Mesa::paginate(5);
+        $datos['mesas']=Mesa::paginate(20);
         return view('mesa.index', $datos);
     }
 
@@ -39,9 +39,15 @@ class MesaController extends Controller
     public function store(Request $request)
     {
         //
-        $datosMesa = request()->except('_token');
-        Mesa::insert($datosMesa);
-        return response()->json($datosMesa);
+        $mesa = ['estado'=>'0'];
+        //$datosMesa = request()->except('_token');
+        $cantidad = $request['cantidad'];
+        for ($i = 1; $i <= $cantidad; $i++) {
+            Mesa::insert($mesa);
+        }
+
+        //return response()->json($datosMesa);
+        return redirect('mesa');
     }
 
     /**

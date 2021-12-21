@@ -1,0 +1,69 @@
+:root {
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffffff;
+    --color1: #124e78;
+    --color2: #e6e6b8;
+    --color3: #e7a92d;
+    --color4: #9e2a2b;
+    --color5: #540b0e;
+    --color6: #124e78;
+    --color7: #f0f0c9;
+    --color8: #fcbf49;
+    --color9: #f77f00;
+    --color10: #6e0e0a;
+}
+.bg-color1{
+    background-color: var(--color1);
+}
+.bg-color2{
+    background-color: var(--color2);
+}
+.bg-color3{
+    background-color: var(--color3);
+}
+.bg-color4{
+    background-color: var(--color4);
+}
+.bg-color5{
+    background-color: var(--color5);
+}
+.bg-color6{
+    background-color: var(--color6);
+}
+.bg-color7{
+    background-color: var(--color7);
+}
+
+.button1 {
+    color: var(--color1);
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: var(--color1);
+    color: var(--color2);
+}
+
+.button2 {
+    height: 35px;
+    color: var(--color2);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: var(--color2);
+    color: var(--color4);
+}
+.card-size{
+    width: 12rem !important;
+    height: 10rem !important;
+}
+.text-color2{
+    color: var(--color2);
+}
+.text-color3{
+    color: var(--color3);
+}

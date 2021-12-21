@@ -31,3 +31,7 @@ Route::resource('itemcomanda',\App\Http\Controllers\ItemcomandaController::class
 Route::resource('comentario',\App\Http\Controllers\ComentarioController::class);
 Route::resource('mesa',\App\Http\Controllers\MesaController::class);
 Route::resource('categoria',\App\Http\Controllers\CategoriaController::class);
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

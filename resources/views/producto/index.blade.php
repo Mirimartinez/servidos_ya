@@ -1,6 +1,10 @@
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Mostrar la lista de productos</h1>
 <br>
-<table style="border-style: solid">
+<table class="table table-dark">
     <thead>
         <tr>
             <th>ID</th>
@@ -33,3 +37,4 @@
     </tbody>
 </table>
 
+@endsection

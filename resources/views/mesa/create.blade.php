@@ -1,7 +1,13 @@
-<h1>Formulario de creacion de producto</h1>
+@extends('layouts.app')
+
+@section('content')
+
+<h1 class="h1">Formulario de creacion de mesas</h1>
 <br>
-<form action="{{ route('producto.store') }}" method="post">
+<form class="form-control" action="{{ route('mesa.store') }}" method="post">
     @csrf
-    @include('producto.form')
+    @include('mesa.form')
 </form>
+
+@endsection
 
