@@ -15,7 +15,7 @@ class PermisoSeeder extends Seeder
     {
         //
         DB::table('permisos')->insert([
-            'idrol' => 7,
+            'idrol' => 1,
             'proceso'=>'mozo'
 
         ]);

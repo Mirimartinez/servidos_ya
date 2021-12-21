@@ -8,5 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Mesa extends Model
 {
     use HasFactory;
-    protected $table='mesas';
+    //protected $table='mesas';
+    public function comandas(){
+        return $this->hasMany('App/Models/Comanda');
+    }
 }

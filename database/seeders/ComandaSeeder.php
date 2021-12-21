@@ -19,8 +19,8 @@ class ComandaSeeder extends Seeder
             'fecha'=>'2021-12-14',
             'horainicio'=>'00:06:32',
             'horafin'=>'01:01:32',
-            'idmesa'=>13,
-            'idusuario'=>7,
+            'idmesa'=>1,
+            'idusuario'=>1,
             'importetotal'=>'1258.52',
             'pagado'=>true
 

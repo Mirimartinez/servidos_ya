@@ -15,7 +15,10 @@ class CreatePermisosTable extends Migration
     {
         Schema::create('permisos', function (Blueprint $table) {
             $table->id();
-            $table->integer('idrol');
+            $table->foreignId('idrol')
+                ->constrained('rols')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('proceso');
             $table->timestamps();
         });
