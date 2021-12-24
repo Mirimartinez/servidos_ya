@@ -1,8 +1,8 @@
-<h1>Formulario de edicion de productos</h1>
+<h1>Formulario de edicion de usuarios</h1>
 <br>
-<form action="{{ route('producto.update',$producto->id) }}" method="post">
+<form action="{{ route('usuario.update',$usuario->id) }}" method="post">
     @csrf
     {{ method_field('PATCH') }}
-    @include('producto.form')
+    @include('usuario.form')
 </form>
 

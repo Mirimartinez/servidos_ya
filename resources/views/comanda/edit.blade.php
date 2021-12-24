@@ -1,8 +1,8 @@
-<h1>Formulario de edicion de productos</h1>
+<h1>Formulario de edicion de comanda</h1>
 <br>
-<form action="{{ route('producto.update',$producto->id) }}" method="post">
+<form action="{{ route('comanda.update',$comanda->id) }}" method="post">
     @csrf
     {{ method_field('PATCH') }}
-    @include('producto.form')
+    @include('comanda.form')
 </form>
 

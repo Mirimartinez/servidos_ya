@@ -4,20 +4,20 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Comentario</th>
+            <th>Nombre</th>
 
         </tr>
     </thead>
     <tbody>
-        @foreach($comentarios as $comentario)
+        @foreach($rols as $rol)
         <tr>
-            <td>{{ $comentario->id }}</td>
-            <td>{{ $comentario->comentario }}</td>
+            <td>{{ $rol->id }}</td>
+            <td>{{ $rol->nombre }}</td>
 
             <td>
-                <a href="{{ route('comentario.edit',$comentario->id) }}">Editar</a>
+                <a href="{{ route('rol.edit',$rol->id) }}">Editar</a>
                  |
-                <form action="{{ route('comentario.destroy',$comentario->id) }}" method="post">
+                <form action="{{ route('rol.destroy',$rol->id) }}" method="post">
                     @csrf
                     {{ method_field('DELETE') }}
                     <button type="submit" onclick="return confirm('¿Quieres borrar?')">Borrar</button>

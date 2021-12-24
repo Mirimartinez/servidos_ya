@@ -1,7 +1,7 @@
-<h1>Editar caja</h1>
+<h1>Editar permiso</h1>
 <br>
-<form action="{{ route('caja.update',$caja->id) }}" method="post">
+<form action="{{ route('permiso.update',$permiso->id) }}" method="post">
     @csrf
     {{ method_field('PATCH') }}
-    @include('caja.form')
+    @include('permiso.form')
 </form>
