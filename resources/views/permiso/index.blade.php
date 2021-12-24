@@ -1,4 +1,4 @@
-<h1>Mostrar Cajas</h1>
+<h1>Mostrar Permisos</h1>
 <br>
 <table style="border-style: solid">
     <thead>
@@ -6,26 +6,22 @@
         <th>ID</th>
 
 
-        <th>Fecha</th>
-        <th>Hora</th>
-        <th>Importe Total</th>
+        <th>Rol</th>
+        <th>Proceso</th>
+
         <th>Acciones</th>
     </tr>
     </thead>
     <tbody>
-    @foreach($cajas as $caja)
+    @foreach($permisos as $permiso)
         <tr>
-            <td>{{ $caja->id }}</td>
-            <td>{{ $caja->fecha }}</td>
-            <td>{{ $caja->hora }}</td>
-
-
-
-            <td>{{ $caja->importe_total}}</td>
+            <td>{{ $permiso->id }}</td>
+            <td>{{ $permiso->idrol }}</td>
+            <td>{{ $permiso->proceso }}</td>
             <td>
-                <a href="{{ route('caja.edit',$caja->id) }}">Editar</a>
+                <a href="{{ route('permiso.edit',$permiso->id) }}">Editar</a>
                 |
-                <form action="{{ route('caja.destroy',$caja->id) }}" method="post">
+                <form action="{{ route('permiso.destroy',$permiso->id) }}" method="post">
                     @csrf
                     {{ method_field('DELETE') }}
                     <button type="submit" onclick="return confirm('¿Quieres borrar?')">Borrar</button>

@@ -1,7 +1,7 @@
-<h1>Formulario de creacion de producto</h1>
+<h1>Formulario de creacion de usuarios</h1>
 <br>
-<form action="{{ route('producto.store') }}" method="post">
+<form action="{{ route('usuario.store') }}" method="post">
     @csrf
-    @include('producto.form')
+    @include('usuario.form')
 </form>
 

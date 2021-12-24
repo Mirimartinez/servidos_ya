@@ -4,25 +4,23 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Tipo</th>
+            <th>Nro. Comanda</th>
+            <th>Nro. Producto</th>
             <th>Precio</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($productos as $producto)
+        @foreach($itemcomandas as $itemcomanda)
         <tr>
-            <td>{{ $producto->id }}</td>
-            <td>{{ $producto->nombre }}</td>
-            <td>{{ $producto->descripcion }}</td>
-            <td>{{ $producto->tipo }}</td>
-            <td>{{ $producto->precio }}</td>
+            <td>{{ $itemcomanda->id }}</td>
+            <td>{{ $itemcomanda->idcomanda }}</td>
+            <td>{{ $itemcomanda->idproducto }}</td>
+            <td>{{ $itemcomanda->precio }}</td>
             <td>
-                <a href="{{ route('producto.edit',$producto->id) }}">Editar</a>
+                <a href="{{ route('itemcomanda.edit',$itemcomanda->id) }}">Editar</a>
                  |
-                <form action="{{ route('producto.destroy',$producto->id) }}" method="post">
+                <form action="{{ route('itemcomanda.destroy',$itemcomanda->id) }}" method="post">
                     @csrf
                     {{ method_field('DELETE') }}
                     <button type="submit" onclick="return confirm('¿Quieres borrar?')">Borrar</button>

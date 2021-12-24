@@ -1,7 +1,7 @@
-<h1>Formulario cierre de caja</h1>
+<h1>Formulario de permiso</h1>
 <br>
-<form action="{{ route('caja.store') }}" method="post">
+<form action="{{ route('permiso.store') }}" method="post">
     @csrf
-    @include('caja.form')
+    @include('permiso.form')
 </form>
 

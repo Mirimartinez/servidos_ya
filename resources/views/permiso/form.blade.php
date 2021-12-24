@@ -1,6 +1,12 @@
 <div>
-    <label>Importe total: </label> <br>
-    <input type="text" name="importeTotal" id="importeTotal" value="{{ $caja->ImporteTotal ?? '' }}">
+    <label>Rol: </label>
+    <input class="form-control" type="text" name="rol" id="rol" value="{{ $permiso->idrol ?? '' }}">
     <br>
 </div>
-<button type="submit">Guardar</button>
+<div>
+    <label>Proceso: </label>
+    <input class="form-control" type="text" name="proceso" id="proceso" value="{{ $permiso->proceso ?? '' }}">
+    <br>
+</div>
+
+<button class="form-control" type="submit">Guardar</button>

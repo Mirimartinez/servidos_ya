@@ -1,21 +1,21 @@
 <div>
     <label>Nombre: </label>
-    <input type="text" name="nombre" id="nombre" value="{{ $producto->nombre ?? '' }}">
+    <input type="text" name="nombre" id="nombre" value="{{ $usuario->nombre ?? '' }}">
     <br>
 </div>
 <div>
-    <label>Descripcion: </label>
-    <input type="text" name="descripcion" id="descripcion" value="{{ $producto->descripcion ?? '' }}">
+    <label>Password: </label>
+    <input type="password" name="password" id="password" value="{{ $usuario->password ?? '' }}">
     <br>
 </div>
 <div>
-    <label>Tipo: </label>
-    <input type="text" name="tipo" id="tipo" value="{{ $producto->tipo ?? '' }}">
+    <label>Rol: </label>
+    <input type="text" name="idrol" id="idrol" value="{{ $usuario->idrol ?? '' }}">
     <br>
 </div>
 <div>
-    <label>Precio: </label>
-    <input type="text" name="precio" id="precio" value="{{ $producto->precio ?? '' }}">
+    <label>Activo: </label>
+    <input type="radio" name="activo" id="activo" value="{{ $usuario->idrol ?? '' }}">
     <br>
 </div>
 <button type="submit">Guardar</button>
