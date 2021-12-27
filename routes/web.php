@@ -22,6 +22,7 @@ Route::get('/login', function(){
 });
 
 Route::get('mesa/atender/{id}', [\App\Http\Controllers\MesaController::class, 'atender'])->name('mesa.atender');
+Route::get('mesa/pagar/{id}', [\App\Http\Controllers\MesaController::class, 'pagar'])->name('mesa.pagar');
 Route::resource('producto', \App\Http\Controllers\ProductoController::class);
 Route::resource('caja',\App\Http\Controllers\CajaController::class);
 Route::resource('permiso',\App\Http\Controllers\PermisoController::class);
