@@ -10,9 +10,9 @@ class Rol extends Model
     use HasFactory;
 
     public function permisos(){
-        return $this->hasMany('App/Models/Permiso');
+        return $this->hasMany(Permiso::class,'idpermiso');
     }
     public function usuarios(){
-        return $this->hasMany('app/Models/Usuario');
+        return $this->hasMany(Usuario::class,'idpermiso');
     }
 }

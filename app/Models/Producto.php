@@ -11,9 +11,13 @@ class Producto extends Model
     use HasFactory;
 
     public function categoria(){
-        return $this->belongsTo('App/Models/Categoria');
+        return $this->belongsTo(Categoria::class,'idcategoria');
     }
     public function itemcomandas(){
-        return $this->hasMany('App/Models/Itemcomanda');
+        return $this->hasMany(Itemcomanda::class,'idproducto');
+    }
+
+    public static function listarProductos() {
+        return static::all();
     }
 }

@@ -9,10 +9,14 @@ class Itemcomanda extends Model
 {
     use HasFactory;
     public function comanda(){
-        return $this->belongsTo('app/Models/Comanda');
+        return $this->belongsTo(Comanda::class,'idcomanda');
     }
     public function producto(){
-        return $this->belongsTo('App/Models/Producto');
+        return $this->belongsTo(Producto::class,'idproducto');
+    }
+
+    public static function listaItems($idcomanda) {
+        return static::where('idcomanda',$idcomanda);
     }
 
 }

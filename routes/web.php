@@ -35,3 +35,7 @@ Route::resource('categoria',\App\Http\Controllers\CategoriaController::class);
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/atender/{id}',function ($id) {
+    return view('mesa.atender')->with('id',$id);
+})->name('atender');

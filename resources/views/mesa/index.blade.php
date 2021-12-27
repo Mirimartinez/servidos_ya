@@ -9,16 +9,12 @@
             <h5 class="card-title text-color2 h3">Mesa N° {{$mesa->id}}</h5>
 
             <h6 class="card-subtitle mb-2 text-color3 h5">
-                @if($mesa->estado == 0)
-                    {{$estadomesa = 'libre'}}
-                @else
-                    {{$estadomesa = 'ocupada'}}
-                @endif
+                {{ $mesa->estadoMesa() }}
             </h6>
-            <h6 class="text-light text-center h4 mb-3"><i class="fas fa-dollar-sign"></i>9999</h6>
+            <h6 class="text-light text-center h4 mb-3"><i class="fas fa-dollar-sign"></i>{{$mesa->totalMesa()}}</h6>
             <!--<div class="d-flex justify-content-center">-->
             <div class="btn-group w-100">
-                <button class="btn button2 w-50"><i class="h3 fas fa-check mb-0" onclick="mesa()"></i></button>
+                <button class="btn button2 w-50"><i class="h3 fas fa-check mb-0" onclick="window.location='{{ route('atender', $mesa->id ) }}'"></i></button>
                 <button class="btn button2 w-50"><i class="h4 fas fa-cash-register mb-0" onclick="cobrar()"></i></button>
             </div>
 

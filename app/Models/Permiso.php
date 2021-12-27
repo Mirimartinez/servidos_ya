@@ -9,7 +9,7 @@ class Permiso extends Model
 {
     use HasFactory;
     public function rol(){
-        return $this->belongsTo('App/Models/Rol');
+        return $this->belongsTo(Rol::class,'idrol');
     }
 
 }
