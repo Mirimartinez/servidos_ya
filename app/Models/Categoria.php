@@ -10,6 +10,10 @@ class Categoria extends Model
     use HasFactory;
     //protected $table='categorias';
     public function productos(){
-        return $this->hasMany('App/Models/Producto');
+        return $this->hasMany(Producto::class,'idcategoria');
+    }
+
+    public static function listarCategorias() {
+        return static::all();
     }
 }

@@ -10,9 +10,9 @@ class Usuario extends Model
     use HasFactory;
     //protected $table='usuarios';
     public function rol(){
-        return $this->belongsTo('App/Models/Rol');
+        return $this->belongsTo(Rol::class,'idrol');
     }
     public function comandas(){
-        return $this->hasMany('App/Models/Comanda');
+        return $this->hasMany(Comanda::class,'idusuario');
     }
 }
