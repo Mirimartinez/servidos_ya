@@ -125,6 +125,7 @@ class MesaController extends Controller
 
     public function pagar($id) {
         $mesa=Mesa::findOrFail($id);
+        //Traer los datos de la comanda, y pasarselo a la vista Pagar.
         return view('mesa.pagar', compact('mesa'));
     }
 }
