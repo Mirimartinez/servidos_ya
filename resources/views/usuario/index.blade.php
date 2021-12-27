@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         @foreach($usuarios as $usuario)
-        <tr>
+        <tr class="align-text-bottom">
             <td>{{ $usuario->id }}</td>
             <td>{{ $usuario->nombre }}</td>
             <td>{{ $usuario->password }}</td>
@@ -38,3 +38,4 @@
 </table>
     </div>
 </div>
+@include('includes.footer')

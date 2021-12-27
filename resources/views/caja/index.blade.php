@@ -16,7 +16,7 @@
     </thead>
     <tbody>
     @foreach($cajas as $caja)
-        <tr>
+        <tr class="align-text-bottom">
             <td>{{ $caja->id }}</td>
             <td>{{ $caja->fecha }}</td>
             <td>{{ $caja->hora }}</td>
@@ -36,4 +36,5 @@
 </table>
 </div>
 </div>
+@include('includes.footer')
 

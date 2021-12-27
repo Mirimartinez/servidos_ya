@@ -13,7 +13,7 @@
     </thead>
     <tbody>
         @foreach($rols as $rol)
-        <tr>
+        <tr class="align-text-bottom">
             <td>{{ $rol->id }}</td>
             <td>{{ $rol->nombre }}</td>
             <td class="btn-group">
@@ -31,3 +31,4 @@
 </table>
     </div>
 </div>
+@include('includes.footer')

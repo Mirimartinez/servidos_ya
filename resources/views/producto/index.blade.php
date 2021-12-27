@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         @foreach($productos as $producto)
-        <tr>
+        <tr class="align-text-bottom">
             <td>{{ $producto->id }}</td>
             <td>{{ $producto->nombre }}</td>
             <td>{{ $producto->descripcion }}</td>
@@ -25,7 +25,7 @@
             <td>{{ $producto->precio }}</td>
             <td class="btn-group">
                 <a class="btn btn-primary rounded-3 mx-1 border-end border-bottom pt-2" href="{{ route('producto.edit',$producto->id) }}">Editar</a>
-                 |
+
                 <form action="{{ route('producto.destroy',$producto->id) }}" method="post">
                     @csrf
                     {{ method_field('DELETE') }}
@@ -38,3 +38,5 @@
 </table>
     </div>
 </div>
+@include('includes.footer')
+

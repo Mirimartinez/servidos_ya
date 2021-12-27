@@ -15,7 +15,7 @@
     </thead>
     <tbody>
     @foreach($permisos as $permiso)
-        <tr>
+        <tr class="align-text-bottom">
             <td>{{ $permiso->id }}</td>
             <td>{{ $permiso->idrol }}</td>
             <td>{{ $permiso->proceso }}</td>
@@ -34,3 +34,5 @@
 </table>
     </div>
 </div>
+@include('includes.footer')
+

@@ -2,7 +2,7 @@
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col">
-<div class="row justify-content-around gap-3 mx-1 ">
+<div class="row justify-content-around gap-3 mx-1 mb-5">
 @foreach($mesas as $mesa)
 
     <div class="card bg-color1 shadow card-size">
@@ -28,3 +28,4 @@
         </div>
     </div>
 </div>
+@include('includes.footer')

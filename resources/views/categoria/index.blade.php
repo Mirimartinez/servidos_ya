@@ -13,7 +13,7 @@
     </thead>
     <tbody>
         @foreach($categorias as $categoria)
-        <tr>
+        <tr class="align-text-bottom">
             <td>{{ $categoria->id }}</td>
             <td>{{ $categoria->nombre }}</td>
             <td class="btn-group">
@@ -31,4 +31,4 @@
 </table>
     </div>
 </div>
-
+@include('includes.footer')

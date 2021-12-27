@@ -16,7 +16,7 @@
     </thead>
     <tbody>
         @foreach($itemcomandas as $itemcomanda)
-        <tr class="text-center">
+        <tr class="align-text-bottom">
             <td>{{ $itemcomanda->id }}</td>
             <td>{{ $itemcomanda->idcomanda }}</td>
             <td>{{ $itemcomanda->idproducto }}</td>
@@ -36,3 +36,5 @@
 </table>
     </div>
 </div>
+@include('includes.footer')
+

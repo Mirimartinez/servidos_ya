@@ -19,7 +19,7 @@
     </thead>
     <tbody>
         @foreach($comandas as $comanda)
-        <tr>
+        <tr class="align-text-bottom">
             <td>{{ $comanda->id }}</td>
             <td>{{ $comanda->fecha }}</td>
             <td>{{ $comanda->horainicio }}</td>
@@ -43,3 +43,4 @@
 </table>
     </div>
 </div>
+@include('includes.footer')

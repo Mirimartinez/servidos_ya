@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         @foreach($comentarios as $comentario)
-        <tr>
+        <tr class="align-text-bottom">
             <td>{{ $comentario->id }}</td>
             <td>{{ $comentario->comentario }}</td>
 
@@ -33,5 +33,6 @@
 </table>
     </div>
 </div>
+@include('includes.footer')
 
 

@@ -7,7 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Servidos Ya!</title>
+    <!-- FAVICON-->
+    <link rel="icon" href="../public/img/logoico.ico" type="image/x-icon">
+    <title>Servidos YA!</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -31,9 +33,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-color2 shadow-sm">
             <div class="container-fluid">
-                <img class="mx-3" src="{{asset('img/logo.png')}}" width="75px">
+                <img class="mx-3" src="{{asset('img/logo1.png')}}" width="75px">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Servidos Ya!
+                    Servidos YA!
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -80,6 +82,51 @@
                             </li>
                         @endguest
                     </ul>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Productos
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Alta producto</a></li>
+                                    <li><a class="dropdown-item" href="#">Consulta producto</a></li>
+                                    <li><a class="dropdown-item" href="#">Editar producto</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Permisos</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Rol
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Alta Rol</a></li>
+                                    <li><a class="dropdown-item" href="#">Editar Rol</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Caja
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Cierre</a></li>
+                                    <li><a class="dropdown-item" href="#">Movimientos</a></li>
+                                    <li><a class="dropdown-item" href="#">Buscar</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Sobre Nosotros</a>
+                            </li>
+
+                        </ul>
                 </div>
             </div>
         </nav>
