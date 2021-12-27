@@ -1,13 +1,12 @@
-@extends('layouts.app')
-
-@section('content')
-
-<h1 class="h1">Formulario de creacion de mesas</h1>
-<br>
-<form class="form-control" action="{{ route('mesa.store') }}" method="post">
+@include('layouts.app')
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col">
+<h1 class="text-uppercase">Formulario de creación de mesas</h1>
+        </div>
+<form action="{{ route('mesa.store') }}" method="post">
     @csrf
     @include('mesa.form')
 </form>
-
-@endsection
-
+        </div>
+    </div>

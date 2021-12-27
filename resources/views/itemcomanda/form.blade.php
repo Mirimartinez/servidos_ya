@@ -1,17 +1,14 @@
 <div>
     <label>Nro. Comanda: </label>
-    <input type="text" name="idcomanda" id="idcomanda" value="{{ $itemcomanda->idcomanda ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="idcomanda" id="idcomanda" value="{{ $itemcomanda->idcomanda ?? '' }}">
 </div>
 <div>
     <label>Nro. Producto: </label>
-    <input type="text" name="idproducto" id="idproducto" value="{{ $itemcomanda->idproducto ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="idproducto" id="idproducto" value="{{ $itemcomanda->idproducto ?? '' }}">
 </div>
 
 <div>
     <label>Precio: </label>
-    <input type="text" name="precio" id="precio" value="{{ $itemcomanda->precio ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="precio" id="precio" value="{{ $itemcomanda->precio ?? '' }}">
 </div>
-<button type="submit">Guardar</button>
+<button class="btn-primary rounded-3 m-2" type="submit">Guardar</button>

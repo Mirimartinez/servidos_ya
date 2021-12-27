@@ -30,7 +30,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-color2 shadow-sm">
-            <div class="container">
+            <div class="container-fluid">
                 <img class="mx-3" src="{{asset('img/logo.png')}}" width="75px">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Servidos Ya!

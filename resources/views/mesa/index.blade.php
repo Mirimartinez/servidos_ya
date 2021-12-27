@@ -1,7 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="row justify-content-start gap-2 ms-5">
+@include('layouts.app')
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col">
+<div class="row justify-content-around gap-3 mx-1 ">
 @foreach($mesas as $mesa)
 
     <div class="card bg-color1 shadow card-size">
@@ -24,5 +25,6 @@
 
 @endforeach
 </div>
-
-@endsection
+        </div>
+    </div>
+</div>

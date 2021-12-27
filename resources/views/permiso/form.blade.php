@@ -1,12 +1,10 @@
 <div>
     <label>Rol: </label>
-    <input class="form-control" type="text" name="rol" id="rol" value="{{ $permiso->idrol ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="rol" id="rol" value="{{ $permiso->idrol ?? '' }}">
 </div>
 <div>
     <label>Proceso: </label>
-    <input class="form-control" type="text" name="proceso" id="proceso" value="{{ $permiso->proceso ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="proceso" id="proceso" value="{{ $permiso->proceso ?? '' }}">
 </div>
 
-<button class="form-control" type="submit">Guardar</button>
+<button class="btn-primary rounded-3 m-2" type="submit">Guardar</button>

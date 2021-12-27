@@ -1,21 +1,17 @@
 <div>
     <label>Nombre: </label>
-    <input type="text" name="nombre" id="nombre" value="{{ $usuario->nombre ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="nombre" id="nombre" value="{{ $usuario->nombre ?? '' }}">
 </div>
 <div>
     <label>Password: </label>
-    <input type="password" name="password" id="password" value="{{ $usuario->password ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="password" name="password" id="password" value="{{ $usuario->password ?? '' }}">
 </div>
 <div>
     <label>Rol: </label>
-    <input type="text" name="idrol" id="idrol" value="{{ $usuario->idrol ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="idrol" id="idrol" value="{{ $usuario->idrol ?? '' }}">
 </div>
 <div>
     <label>Activo: </label>
-    <input type="radio" name="activo" id="activo" value="{{ $usuario->idrol ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="radio" name="activo" id="activo" value="{{ $usuario->idrol ?? '' }}">
 </div>
-<button type="submit">Guardar</button>
+<button class="btn-primary rounded-3 m-2" type="submit">Guardar</button>

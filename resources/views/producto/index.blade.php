@@ -1,10 +1,10 @@
-@extends('layouts.app')
-
-@section('content')
-
+@include('layouts.app')
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col">
 <h1>Mostrar la lista de productos</h1>
-<br>
-<table class="table table-dark">
+        </div>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>ID</th>
@@ -23,18 +23,18 @@
             <td>{{ $producto->descripcion }}</td>
             <td>{{ $producto->tipo }}</td>
             <td>{{ $producto->precio }}</td>
-            <td>
-                <a href="{{ route('producto.edit',$producto->id) }}">Editar</a>
+            <td class="btn-group">
+                <a class="btn btn-primary rounded-3 mx-1 border-end border-bottom pt-2" href="{{ route('producto.edit',$producto->id) }}">Editar</a>
                  |
                 <form action="{{ route('producto.destroy',$producto->id) }}" method="post">
                     @csrf
                     {{ method_field('DELETE') }}
-                    <button type="submit" onclick="return confirm('¿Quieres borrar?')">Borrar</button>
+                    <button class="btn-danger rounded-3 mx-1 p-2" type="submit" onclick="return confirm('¿Quieres borrar?')">Borrar</button>
                 </form>
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
-
-@endsection
+    </div>
+</div>

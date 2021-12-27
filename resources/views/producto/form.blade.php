@@ -1,21 +1,18 @@
 <div>
     <label>Nombre: </label>
-    <input class="form-control" type="text" name="nombre" id="nombre" value="{{ $producto->nombre ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="nombre" id="nombre" value="{{ $producto->nombre ?? '' }}">
+
 </div>
 <div>
     <label>Descripcion: </label>
-    <input class="form-control" type="text" name="descripcion" id="descripcion" value="{{ $producto->descripcion ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="descripcion" id="descripcion" value="{{ $producto->descripcion ?? '' }}">
 </div>
 <div>
     <label>Tipo: </label>
-    <input class="form-control" type="text" name="tipo" id="tipo" value="{{ $producto->tipo ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="tipo" id="tipo" value="{{ $producto->tipo ?? '' }}">
 </div>
 <div>
     <label>Precio: </label>
-    <input class="form-control" type="text" name="precio" id="precio" value="{{ $producto->precio ?? '' }}">
-    <br>
+    <input class="form-control m-2 text-center" type="text" name="precio" id="precio" value="{{ $producto->precio ?? '' }}">
 </div>
-<button class="form-control" type="submit">Guardar</button>
+<button class="btn-primary rounded-3 m-2" type="submit">Guardar</button>
