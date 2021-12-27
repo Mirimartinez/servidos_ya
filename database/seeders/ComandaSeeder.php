@@ -22,7 +22,7 @@ class ComandaSeeder extends Seeder
             'idmesa'=>1,
             'idusuario'=>1,
             'importetotal'=>'1258.52',
-            'pagado'=>true
+            'pagado'=>false
 
         ]);
     }
