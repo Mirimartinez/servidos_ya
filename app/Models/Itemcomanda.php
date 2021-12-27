@@ -16,7 +16,7 @@ class Itemcomanda extends Model
     }
 
     public static function listaItems($idcomanda) {
-        return static::where('idcomanda',$idcomanda);
+        return static::where('idcomanda',$idcomanda)->get();
     }
 
 }

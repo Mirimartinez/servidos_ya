@@ -1,6 +1,6 @@
 @include('includes.header')
 <div class="container-fluid color1">
-  <h1 class="color1 text-center text-color2 pb-1 pt-3">MESA N° {{$id}} COMANDA: {{App\Models\Comanda::comandaActivaDeMesa($id)->id}}</h1>
+  <h1 class="color1 text-center text-color2 pb-1 pt-3">MESA N° {{$mesa->id}} COMANDA: {{App\Models\Comanda::comandaActivaDeMesa($mesa->id)->id}}</h1>
   {{--  CONTENIDO CENTRAL --}}
     {{-- CATEGORIAS E ITEMS --}}
       <div class="row d-flex flex-wrap container-fluid">
@@ -42,7 +42,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+        @foreach(App\Models\Itemcomanda::listaItems(App\Models\Comanda::comandaActivaDeMesa($mesa->id)->id) as $item)
+            <tr>
+                <th scope="row">1</th>
+                <td>{{App\Models\Producto::nombreProducto($item->idproducto)->nombre}}</td>
+                <td>{{$item->precio}}</td>
+                <td>{{$item->precio}}</td>
+            </tr>
+        @endforeach
+        <!--<tr>
             <th scope="row">1</th>
             <td>Licuado</td>
             <td>$150</td>
@@ -71,10 +79,10 @@
             <td>Alfajor</td>
             <td>$70</td>
             <td>$140</td>
-          </tr>
+          </tr> -->
           <tr>
               <th scope="row" class="h4" colspan="2">TOTAL</th>
-              <td></td>
+              <td>{{App\Models\Itemcomanda::listaItems(App\Models\Comanda::comandaActivaDeMesa($mesa->id)->id)->sum('precio')}}</td>
               <td class="h4"></td>
 
           </tr>

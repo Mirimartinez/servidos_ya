@@ -15,16 +15,14 @@
             <h6 class="text-light text-center h4 mb-3"><i class="fas fa-dollar-sign"></i>{{$mesa->totalMesa()}}</h6>
             <!--<div class="d-flex justify-content-center">-->
             <div class="btn-group w-100">
-                <button class="btn button2 w-50"><i class="h3 fas fa-check mb-0" onclick="window.location='{{ route('atender', $mesa->id ) }}'"></i></button>
+                <button class="btn button2 w-50"><i class="h3 fas fa-check mb-0" onclick="window.location='{{ url("/mesa/atender/" . $mesa->id)}}'"></i></button>
                 <button class="btn button2 w-50"><i class="h4 fas fa-cash-register mb-0" onclick="cobrar()"></i></button>
             </div>
 
         </div>
     </div>
-
-
 @endforeach
-</div>
+    </div>
         </div>
     </div>
 </div>

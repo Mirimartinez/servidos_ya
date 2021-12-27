@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mesa;
+use App\Models\Comanda;
 use Illuminate\Http\Request;
 
 class MesaController extends Controller
@@ -101,5 +102,24 @@ class MesaController extends Controller
         //
         Mesa::destroy($id);
         return redirect('mesa');
+    }
+
+    public function atender($id) {
+        $mesa=Mesa::findOrFail($id);
+        $curTime = new \DateTime();
+        if ($mesa->estado == 0) {
+            Mesa::where('id','=',$id)->update(['estado' => '1']);
+            // Crear comanda
+            Comanda::insert([
+                'fecha' => $curTime->format("Y-m-d"),
+                'horainicio' => $curTime->format("H:i:s"),
+                'horafin' => '0:0:0',
+                'idmesa' => $mesa->id,
+                'idusuario' => 1,
+                'importetotal' => 0,
+                'pagado' => false
+            ]);
+        }
+        return view('mesa.atender', compact('mesa'));
     }
 }
