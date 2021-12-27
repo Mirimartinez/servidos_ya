@@ -20,4 +20,8 @@ class Producto extends Model
     public static function listarProductos() {
         return static::all();
     }
+
+    public static function nombreProducto($idproducto) {
+        return static::select('nombre')->where('id',$idproducto)->first();
+    }
 }
