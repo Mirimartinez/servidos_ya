@@ -122,4 +122,9 @@ class MesaController extends Controller
         }
         return view('mesa.atender', compact('mesa'));
     }
+
+    public function pagar($id) {
+        $mesa=Mesa::findOrFail($id);
+        return view('mesa.pagar', compact('mesa'));
+    }
 }

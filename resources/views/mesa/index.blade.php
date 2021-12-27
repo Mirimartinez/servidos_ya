@@ -16,7 +16,7 @@
             <!--<div class="d-flex justify-content-center">-->
             <div class="btn-group w-100">
                 <button class="btn button2 w-50"><i class="h3 fas fa-check mb-0" onclick="window.location='{{ url("/mesa/atender/" . $mesa->id)}}'"></i></button>
-                <button class="btn button2 w-50"><i class="h4 fas fa-cash-register mb-0" onclick="cobrar()"></i></button>
+                <button class="btn button2 w-50"><i class="h4 fas fa-cash-register mb-0" onclick="window.location='{{ url("/mesa/pagar/" . $mesa->id)}}'"></i></button>
             </div>
 
         </div>
