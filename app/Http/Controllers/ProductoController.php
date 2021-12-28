@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -28,7 +29,9 @@ class ProductoController extends Controller
     //2
     public function create()
     {
-        return view('producto.create');
+        //agregar el parametro que manda la lista de categorias de productos a la vista.
+        $datos['categorias']=Categoria::all();
+        return view('producto.create',$datos);
     }
 
     /**
