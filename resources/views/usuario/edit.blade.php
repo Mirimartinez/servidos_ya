@@ -5,7 +5,7 @@
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col">
-<h1 class="text-uppercase">Formulario de edición de usuarios</h1>
+<h1 class="text-uppercase">Editar de usuarios</h1>
         </div>
 <form action="{{ route('usuario.update',$usuario->id) }}" method="post">
     @csrf

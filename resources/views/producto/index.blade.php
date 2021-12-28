@@ -1,11 +1,12 @@
 @include('layouts.app')
 <div class="d-inline-flex ms-4">
     <a href="{{route('mesa.index')}}"><i class="fas fa-arrow-left h2"></i></a>
+    <a class="ms-3" href="{{route('producto.create')}}"><i class="fas fa-plus h2"></i></a>
 </div>
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col">
-<h1>Mostrar la lista de productos</h1>
+<h1 class="text-uppercase">Productos</h1>
         </div>
 <table class="table table-bordered">
     <thead>
