@@ -21,5 +21,17 @@ class ItemcomandaSeeder extends Seeder
             'precio'=>1235.30
 
         ]);
+        DB::table('itemcomandas')->insert([
+            'idcomanda'=>2,
+            'idproducto'=>3,
+            'precio'=>835.30
+
+        ]);
+        DB::table('itemcomandas')->insert([
+            'idcomanda'=>3,
+            'idproducto'=>2,
+            'precio'=>1555.30
+
+        ]);
     }
 }

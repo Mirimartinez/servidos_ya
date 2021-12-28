@@ -19,5 +19,6 @@ class PermisoSeeder extends Seeder
             'proceso'=>'mozo'
 
         ]);
+        
     }
 }

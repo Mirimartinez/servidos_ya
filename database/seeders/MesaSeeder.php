@@ -18,5 +18,19 @@ class MesaSeeder extends Seeder
         DB::table('mesas')->insert([
             'estado' => true
         ]);
+        DB::table('mesas')->insert([
+            'estado' => false
+        ]); DB::table('mesas')->insert([
+            'estado' => false
+        ]);
+        DB::table('mesas')->insert([
+            'estado' => false
+        ]);
+        DB::table('mesas')->insert([
+            'estado' => true
+        ]);
+        DB::table('mesas')->insert([
+            'estado' => true
+        ]);
     }
 }

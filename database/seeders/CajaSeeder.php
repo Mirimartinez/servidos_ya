@@ -21,6 +21,24 @@ class CajaSeeder extends Seeder
             'hora' => '11:45:00'
 
         ]);
+        DB::table('cajas')->insert([
+            'importe_total' => 200,
+            'fecha' => '2021-12-09',
+            'hora' => '12:00:00'
+
+        ]);
+        DB::table('cajas')->insert([
+            'importe_total' => 140,
+            'fecha' => '2021-12-09',
+            'hora' => '12:15:00'
+
+        ]);
+        DB::table('cajas')->insert([
+            'importe_total' => 230,
+            'fecha' => '2021-12-09',
+            'hora' => '12:30:00'
+
+        ]);
 
     }
 }
