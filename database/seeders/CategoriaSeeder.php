@@ -20,5 +20,14 @@ class CategoriaSeeder extends Seeder
         DB::table('categorias')->insert([
             'nombre' => 'Bebidas'
         ]);
+        DB::table('categorias')->insert([
+            'nombre' => 'Entradas'
+        ]);
+        DB::table('categorias')->insert([
+            'nombre' => 'Platos'
+        ]);
+        DB::table('categorias')->insert([
+            'nombre' => 'Postres'
+        ]);
     }
 }

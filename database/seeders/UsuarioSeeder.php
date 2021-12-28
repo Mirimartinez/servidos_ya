@@ -21,5 +21,17 @@ class UsuarioSeeder extends Seeder
             'idrol' => '1',
             'activo' => true
         ]);
+        DB::table('usuarios')->insert([
+            'nombre' => 'MIriana Martinez',
+            'password' => 'LikeASurgeon',
+            'idrol' => '2',
+            'activo' => true
+        ]);
+        DB::table('usuarios')->insert([
+            'nombre' => 'Charles Montgomery Burns',
+            'password' => 'BirthPlacePangea',
+            'idrol' => '3',
+            'activo' => true
+        ]);
     }
 }

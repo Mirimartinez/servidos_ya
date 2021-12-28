@@ -1,4 +1,7 @@
-@include('includes.header')
+@include('layouts.app')
+<div class="d-inline-flex ms-4">
+    <a href="http://localhost/proyecto_curso_utn/servidos_ya/public/mesa"><i class="fas fa-arrow-left h2"></i></a>
+</div>
 <div class="container-fluid color1">
   <h1 class="color1 text-center text-color2 pb-1 pt-3">MESA N° {{$mesa->id}} COMANDA: {{App\Models\Comanda::comandaActivaDeMesa($mesa->id)->id}}</h1>
   {{--  CONTENIDO CENTRAL --}}
@@ -50,36 +53,7 @@
                 <td>{{$item->precio}}</td>
             </tr>
         @endforeach
-        <!--<tr>
-            <th scope="row">1</th>
-            <td>Licuado</td>
-            <td>$150</td>
-            <td>$150</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Tostado</td>
-            <td>$200</td>
-            <td>$200</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Café Jarrito</td>
-            <td>$80</td>
-            <td>$160</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Agua con gas</td>
-            <td>$120</td>
-            <td>$120</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Alfajor</td>
-            <td>$70</td>
-            <td>$140</td>
-          </tr> -->
+
           <tr>
               <th scope="row" class="h4" colspan="2">TOTAL</th>
               <td>{{App\Models\Itemcomanda::listaItems(App\Models\Comanda::comandaActivaDeMesa($mesa->id)->id)->sum('precio')}}</td>

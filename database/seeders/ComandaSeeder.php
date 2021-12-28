@@ -25,5 +25,25 @@ class ComandaSeeder extends Seeder
             'pagado'=>false
 
         ]);
+        DB::table('comandas')->insert([
+            'fecha'=>'2021-12-14',
+            'horainicio'=>'01:01:32',
+            'horafin'=>'01:56:32',
+            'idmesa'=>2,
+            'idusuario'=>2,
+            'importetotal'=>'1300.50',
+            'pagado'=>true
+
+        ]);
+        DB::table('comandas')->insert([
+            'fecha'=>'2021-12-14',
+            'horainicio'=>'01:56:32',
+            'horafin'=>'02:51:32',
+            'idmesa'=>3,
+            'idusuario'=>3,
+            'importetotal'=>'1300.50',
+            'pagado'=>true
+
+        ]);
     }
 }
