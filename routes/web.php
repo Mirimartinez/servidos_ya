@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/login', function(){
     return view('login');
 });
-
+Route::get('/home', [\App\Http\Controllers\MesaController::class, 'index'])->name('home');
 Route::get('mesa/atender/{id}', [\App\Http\Controllers\MesaController::class, 'atender'])->name('mesa.atender');
 Route::get('mesa/pagar/{id}', [\App\Http\Controllers\MesaController::class, 'pagar'])->name('mesa.pagar');
 Route::resource('producto', \App\Http\Controllers\ProductoController::class);
@@ -36,5 +36,5 @@ Route::resource('categoria',\App\Http\Controllers\CategoriaController::class);
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
