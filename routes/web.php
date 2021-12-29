@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/login', function(){
     return view('login');
 });
+
 Route::get('/home', [\App\Http\Controllers\MesaController::class, 'index'])->name('home');
 Route::get('mesa/atender/{id}', [\App\Http\Controllers\MesaController::class, 'atender'])->name('mesa.atender');
 Route::post('mesa/pagar/{id}', [\App\Http\Controllers\MesaController::class, 'pagar'])->name('mesa.pagar');
