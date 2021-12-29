@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Itemcomanda;
+use App\Models\Comanda;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class ItemcomandaController extends Controller
@@ -90,10 +92,34 @@ class ItemcomandaController extends Controller
      * @param  \App\Models\Itemcomanda  $itemcomanda
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id )
+    public function destroy($id)
     {
         //
+        $precio=Itemcomanda::findOrFail($id)->precio;
+        $idcomanda=Itemcomanda::findOrFail($id)->idcomanda;
+        $comanda=Comanda::findOrFail($idcomanda);
+        $comanda->importetotal -= $precio;
+        $comanda->save();
         Itemcomanda::destroy($id);
-        return redirect('itemcomanda');
+        return redirect('mesa');
+    }
+
+    public function agregarItem($idcomanda)
+    {
+        $datos['productos']=Producto::all();
+        $comanda=Comanda::findOrFail($idcomanda);
+        return view('itemcomanda.agregarItem', compact('comanda'), $datos );
+    }
+
+    public function guardarItem($idcomanda,$idproducto,$precio) {
+        Itemcomanda::insert([
+            'idcomanda' => $idcomanda,
+            'idproducto' => $idproducto,
+            'precio' => $precio
+        ]);
+        $comanda=Comanda::findOrFail($idcomanda);
+        $comanda->importetotal += $precio;
+        $comanda->save();
+        return redirect('mesa');
     }
 }

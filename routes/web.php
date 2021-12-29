@@ -20,9 +20,11 @@ Route::get('/', function () {
 Route::get('/login', function(){
     return view('login');
 });
-
+Route::get('/home', [\App\Http\Controllers\MesaController::class, 'index'])->name('home');
 Route::get('mesa/atender/{id}', [\App\Http\Controllers\MesaController::class, 'atender'])->name('mesa.atender');
-Route::get('mesa/pagar/{id}', [\App\Http\Controllers\MesaController::class, 'pagar'])->name('mesa.pagar');
+Route::post('mesa/pagar/{id}', [\App\Http\Controllers\MesaController::class, 'pagar'])->name('mesa.pagar');
+Route::get('itemcomanda/agregarItem/{id}', [\App\Http\Controllers\ItemcomandaController::class, 'agregarItem'])->name('itemcomanda.agregarItem');
+Route::post('itemcomanda/guardarItem/{id}/{producto}/{precio}', [\App\Http\Controllers\ItemcomandaController::class, 'guardarItem'])->name('itemcomanda.guardarItem');
 Route::resource('producto', \App\Http\Controllers\ProductoController::class);
 Route::resource('caja',\App\Http\Controllers\CajaController::class);
 Route::resource('permiso',\App\Http\Controllers\PermisoController::class);
@@ -36,5 +38,5 @@ Route::resource('categoria',\App\Http\Controllers\CategoriaController::class);
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

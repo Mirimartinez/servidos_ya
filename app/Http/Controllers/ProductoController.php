@@ -70,6 +70,7 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto=Producto::findOrFail($id);
+
         $categorias=Categoria::all();
         return view('producto.edit')
             ->with(compact('producto'))
