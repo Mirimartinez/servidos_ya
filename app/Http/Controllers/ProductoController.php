@@ -70,7 +70,10 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto=Producto::findOrFail($id);
-        return view('producto.edit', compact('producto'));
+        $categorias=Categoria::all();
+        return view('producto.edit')
+            ->with(compact('producto'))
+            ->with(compact('categorias'));
     }
 
     /**
@@ -86,7 +89,10 @@ class ProductoController extends Controller
         $datosProducto = request()->except('_token','_method');
         Producto::where('id','=',$id)->update($datosProducto);
         $producto=Producto::findOrFail($id);
-        return view('producto.edit', compact('producto'));
+        $categorias=Categoria::all();
+        return view('producto.edit')
+            ->with(compact('producto'))
+            ->with(compact('categorias'));
     }
 
     /**
