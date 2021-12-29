@@ -92,11 +92,16 @@ class ItemcomandaController extends Controller
      * @param  \App\Models\Itemcomanda  $itemcomanda
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id )
+    public function destroy($id)
     {
         //
+        $precio=Itemcomanda::findOrFail($id)->precio;
+        $idcomanda=Itemcomanda::findOrFail($id)->idcomanda;
+        $comanda=Comanda::findOrFail($idcomanda);
+        $comanda->importetotal -= $precio;
+        $comanda->save();
         Itemcomanda::destroy($id);
-        return redirect('itemcomanda');
+        return redirect('mesa');
     }
 
     public function agregarItem($idcomanda)
@@ -115,7 +120,6 @@ class ItemcomandaController extends Controller
         $comanda=Comanda::findOrFail($idcomanda);
         $comanda->importetotal += $precio;
         $comanda->save();
-//        Comanda::where('id','=',$idcomanda)->update($comanda);
         return redirect('mesa');
     }
 }
