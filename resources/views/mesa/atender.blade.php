@@ -32,14 +32,16 @@
                             @csrf
                             {{ method_field('DELETE') }}
                             <button class="btn-danger rounded-3 mx-1 p-2" style="width: 4rem;" type="submit" onclick="return confirm('¿Quieres borrar?')">Borrar</button>
-                            <button class="btn-success rounded-3 mx-1 p-2" style="width: 4rem;" type="submit" onclick="return confirm('¿Quieres pagar?')">Pagar</button>
-
                         </form>
                     </td>
+
                 </tr>
             @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center" >
+        <button class="btn-success rounded-3 mt-3 ms-5 btn-lg" style="width: 8rem; height: 4rem" type="submit" onclick="return confirm('¿Quieres pagar?')">Pagar</button>
+        </div>
     </div>
 </div>
 
