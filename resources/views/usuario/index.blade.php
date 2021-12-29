@@ -6,7 +6,7 @@
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col">
-<h1 class="text-uppercase">Productos</h1>
+<h1 class="text-uppercase">Usuarios</h1>
         </div>
 <table class="table table-bordered">
     <thead>
