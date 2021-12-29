@@ -13,12 +13,7 @@
                 {{ $mesa->estadoMesa() }}
             </h6>
             <h6 class="text-light text-center h4 mb-3"><i class="fas fa-dollar-sign"></i>{{$mesa->totalMesa()}}</h6>
-
-
-            <!-- !!!!!!! CAMBIAR LA RUTA A 'mesa.atender' !!!!!!!-->
-
-
-        <a href="{{route('producto.index')}}" class="stretched-link" ></a>
+        <a href="{{url('/mesa/atender/'.$mesa->id)}}" class="stretched-link" ></a>
         </div>
     </div>
 @endforeach
