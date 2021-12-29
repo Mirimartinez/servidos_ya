@@ -1,4 +1,5 @@
 <div class="container container-fluid">
+
     <div>
         <label>Nombre: </label>
         <input class="form-control m-2 text-center" type="text" name="nombre" id="nombre" value="{{ $producto->nombre ?? '' }}">
@@ -13,10 +14,20 @@
 
         <select class="form-select m-2 text-center"  name="idcategoria">
             <option selected>Seleccione una categoria</option>
+
+
             @foreach($categorias as $categoria)
+
                 <option value="{{$categoria->id ?? ''}}">{{$categoria->nombre ?? ''}}</option>
+
+
             @endforeach
+
+
         </select>
+
+
+
     </div>
     <div>
         <label>Precio: </label>
