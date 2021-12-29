@@ -24,7 +24,7 @@
                 <tr class="align-text-bottom">
                     <td>{{$item->id}}</td>
                     <td>{{$item->producto->nombre}}</td>
-                    <td>{{$item->precio}}</td>
+                    <td>$ {{$item->precio}}</td>
                     <td class="btn-group">
                         <a class="btn btn-primary rounded-3 ms-1 me-2 border-end border-bottom pt-2 " style="width: 4rem;" href="{{ route('itemcomanda.edit',$item->id) }}">Editar</a>
 
@@ -37,10 +37,17 @@
 
                 </tr>
             @endforeach
+            <tr>
+                <th scope="row" class="h4" colspan="2" style="text-align: right; font-weight: bold;">TOTAL</th>
+                <td class="h4" style="font-weight: bold;">$ {{App\Models\Itemcomanda::listaItems(App\Models\Comanda::comandaActivaDeMesa($mesa->id)->id)->sum('precio')}}</td>
+            </tr>
             </tbody>
         </table>
         <div class="d-flex justify-content-center" >
-        <button class="btn-success rounded-3 mt-3 ms-5 btn-lg" style="width: 8rem; height: 4rem" type="submit" onclick="return confirm('¿Quieres pagar?')">Pagar</button>
+            <form action="{{ route('mesa.pagar', $mesa->id) }}" method="post">
+                @csrf
+                <button class="btn-success rounded-3 mt-3 ms-5 btn-lg" style="width: 8rem; height: 4rem" type="submit" onclick="return confirm('¿Quieres pagar?')">Pagar</button>
+            </form>
         </div>
     </div>
 </div>
