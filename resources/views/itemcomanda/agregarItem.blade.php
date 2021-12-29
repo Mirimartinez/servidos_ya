@@ -8,6 +8,7 @@
 <h1 class="text-uppercase">Agregar producto a la comanda</h1>
         </div>
         <form action="{{ url("/itemcomanda/guardarItem/" . $comanda->id . "/" . ($idproducto ?? '1'). "/" . ($precio ?? '1')) }}" method="post">
+{{--            <form action="{{ url("/itemcomanda/guardarItem/" . $comanda->id . "/1/1") }}" method="post">--}}
     @csrf
     <div>
         <label>Nro. Comanda: </label>
