@@ -22,7 +22,7 @@ Route::get('/login', function(){
 });
 Route::get('/home', [\App\Http\Controllers\MesaController::class, 'index'])->name('home');
 Route::get('mesa/atender/{id}', [\App\Http\Controllers\MesaController::class, 'atender'])->name('mesa.atender');
-Route::get('mesa/pagar/{id}', [\App\Http\Controllers\MesaController::class, 'pagar'])->name('mesa.pagar');
+Route::post('mesa/pagar/{id}', [\App\Http\Controllers\MesaController::class, 'pagar'])->name('mesa.pagar');
 Route::get('itemcomanda/agregarItem/{id}', [\App\Http\Controllers\ItemcomandaController::class, 'agregarItem'])->name('itemcomanda.agregarItem');
 Route::post('itemcomanda/guardarItem/{id}/{producto}/{precio}', [\App\Http\Controllers\ItemcomandaController::class, 'guardarItem'])->name('itemcomanda.guardarItem');
 Route::resource('producto', \App\Http\Controllers\ProductoController::class);
