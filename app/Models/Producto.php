@@ -24,4 +24,8 @@ class Producto extends Model
     public static function nombreProducto($idproducto) {
         return static::select('nombre')->where('id',$idproducto)->first();
     }
+
+    public static function precioProducto($idproducto) {
+        return static::select('precio')->where('id',$idproducto)->first();
+    }
 }
