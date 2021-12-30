@@ -26,7 +26,7 @@
                     <td>{{$item->producto->nombre}}</td>
                     <td>$ {{$item->precio}}</td>
                     <td class="btn-group">
-                        <a class="btn btn-primary rounded-3 ms-1 me-2 border-end border-bottom pt-2 " style="width: 4rem;" href="{{ route('itemcomanda.edit',$item->id) }}">Editar</a>
+{{--                        <a class="btn btn-primary rounded-3 ms-1 me-2 border-end border-bottom pt-2 " style="width: 4rem;" href="{{ route('itemcomanda.edit',$item->id) }}">Editar</a>--}}
 
                         <form action="{{ route('itemcomanda.destroy',$item->id) }}" method="post">
                             @csrf
