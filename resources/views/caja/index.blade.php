@@ -4,7 +4,7 @@
     <a class="ms-3" href="{{route('caja.create')}}"><i class="fas fa-plus h2"></i></a>
 
 </div>
-<div class="container-fluid text-center">
+<div class="container container-fluid text-center">
     <div class="row">
         <div class="col">
 <h1 class="text-uppercase">Cajas</h1>
@@ -12,7 +12,7 @@
 <table class="table table-bordered">
     <thead>
     <tr>
-        <th>ID</th>
+{{--        <th>ID</th>--}}
         <th>Fecha</th>
         <th>Hora</th>
         <th>Importe Total</th>
@@ -22,10 +22,10 @@
     <tbody>
     @foreach($cajas as $caja)
         <tr class="align-text-bottom">
-            <td>{{ $caja->id }}</td>
+{{--            <td>{{ $caja->id }}</td>--}}
             <td>{{ $caja->fecha }}</td>
             <td>{{ $caja->hora }}</td>
-            <td>{{ $caja->importe_total}}</td>
+            <td>$ {{ $caja->importe_total}}</td>
             <!--<td class="btn-group">
                 <a class="btn btn-primary rounded-3 mx-1 border-end border-bottom pt-2" href="{{ route('caja.edit',$caja->id) }}">Editar</a>
 
