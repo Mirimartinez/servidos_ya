@@ -38,7 +38,7 @@ class CategoriaController extends Controller
     {
         $datosCategoria = request()->except('_token');
         Categoria::insert($datosCategoria);
-        return response()->json($datosCategoria);
+        return redirect('categoria');
     }
 
     /**

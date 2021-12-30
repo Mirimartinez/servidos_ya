@@ -3,7 +3,7 @@
     <a href="{{url()->previous()}}"><i class="fas fa-arrow-left h2"></i></a>
 
 </div>
-<div class="container-fluid text-center">
+<div class="container container-fluid text-center">
     <div class="row">
         <div class="col">
 <h1 class="text-uppercase">Cierre de caja</h1>

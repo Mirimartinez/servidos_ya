@@ -3,7 +3,7 @@
     <a href="{{route('mesa.index')}}"><i class="fas fa-arrow-left h2"></i></a>
     <a class="ms-3" href="{{route('producto.create')}}"><i class="fas fa-plus h2"></i></a>
 </div>
-<div class="container-fluid text-center">
+<div class="container container-fluid text-center">
     <div class="row">
         <div class="col">
 <h1 class="text-uppercase">Productos</h1>
@@ -25,8 +25,8 @@
             <td>{{ $producto->id }}</td>
             <td>{{ $producto->nombre }}</td>
             <td>{{ $producto->descripcion }}</td>
-            <td>{{ $producto->tipo }}</td>
-            <td>{{ $producto->precio }}</td>
+            <td>{{ $producto->categoria->nombre }}</td>
+            <td>$ {{ $producto->precio }}</td>
             <td class="btn-group">
                 <a class="btn btn-primary rounded-3 mx-1 border-end border-bottom pt-2" href="{{ route('producto.edit',$producto->id) }}">Editar</a>
 

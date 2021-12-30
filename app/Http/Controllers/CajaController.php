@@ -41,7 +41,7 @@ class CajaController extends Controller
         //
         $datosCaja = request()->except('_token');
         Caja::insert($datosCaja);
-        return response()->json($datosCaja);
+        return redirect('caja');
     }
 
     /**
