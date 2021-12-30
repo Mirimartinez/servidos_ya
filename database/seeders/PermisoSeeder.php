@@ -16,9 +16,24 @@ class PermisoSeeder extends Seeder
         //
         DB::table('permisos')->insert([
             'idrol' => 1,
-            'proceso'=>'mozo'
+            'proceso'=>'comandas'
 
         ]);
-        
+        DB::table('permisos')->insert([
+            'idrol' => 2,
+            'proceso'=>'Contabilidad'
+
+        ]);
+        DB::table('permisos')->insert([
+            'idrol' => 2,
+            'proceso'=>'Contabilidad'
+
+        ]);
+        DB::table('permisos')->insert([
+            'idrol' => 3,
+            'proceso'=>'Gerencia'
+
+        ]);
+
     }
 }
