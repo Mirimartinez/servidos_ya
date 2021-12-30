@@ -111,14 +111,15 @@ class ItemcomandaController extends Controller
         return view('itemcomanda.agregarItem', compact('comanda'), $datos );
     }
 
-    public function guardarItem($idcomanda,$idproducto,$precio) {
+    public function guardarItem($idcomanda,$idproducto) {
+        $producto=Producto::findOrFail($idproducto);
         Itemcomanda::insert([
             'idcomanda' => $idcomanda,
             'idproducto' => $idproducto,
-            'precio' => $precio
+            'precio' => $producto->precio
         ]);
         $comanda=Comanda::findOrFail($idcomanda);
-        $comanda->importetotal += $precio;
+        $comanda->importetotal += $producto->precio;
         $comanda->save();
         return redirect('mesa');
     }
