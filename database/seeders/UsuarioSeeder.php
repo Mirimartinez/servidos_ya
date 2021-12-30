@@ -33,5 +33,23 @@ class UsuarioSeeder extends Seeder
             'idrol' => '3',
             'activo' => true
         ]);
+        DB::table('usuarios')->insert([
+            'nombre' => 'Gabriela Servent',
+            'password' => 'Hello World',
+            'idrol' => '3',
+            'activo' => true
+        ]);
+        DB::table('usuarios')->insert([
+            'nombre' => 'Nicolas Tracks',
+            'password' => 'MotherFucker',
+            'idrol' => '2',
+            'activo' => true
+        ]);
+        DB::table('usuarios')->insert([
+            'nombre' => 'Pablo Augusto CC',
+            'password' => 'DotCom',
+            'idrol' => '1',
+            'activo' => true
+        ]);
     }
 }
